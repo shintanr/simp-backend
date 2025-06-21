@@ -60,10 +60,12 @@ export const updateStatusComplaint = async (req, res) => {
     return res.status(400).json({ message: "status is required" });
   }
 
-  const statuses = ["open", "closed"];
-  if (!statuses.includes(status)) {
-    return res.status(400).json({ message: "Invalid status" });
-  }
+const statuses = ["open", "closed", "rejected"];
+if (!statuses.includes(status)) {
+  return res.status(400).json({ message: "Invalid status" });
+}
+
+
 
   // check apakah ada id complaint
   const [complaint] = await db.query("SELECT * FROM complaints WHERE id = ?", [
