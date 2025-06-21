@@ -116,6 +116,11 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
+
 
 // kode farhan
 // Direktori penyimpanan
@@ -166,6 +171,7 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: "Something went wrong!" });
 });
+
 
 
 // =============================================
