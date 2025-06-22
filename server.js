@@ -109,7 +109,10 @@ const PORT = process.env.PORT || 8080;
 
 
 app.use(cors({
-  origin: "http://localhost:3000", // frontend origin
+  origin: [
+    "http://localhost:3000",
+    "https://simp-frontend-git-main-shintanrs-projects.vercel.app"
+  ],
   credentials: true,               // agar cookie dikirim
 }));
 app.use(express.json());
