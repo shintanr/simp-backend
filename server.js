@@ -607,11 +607,11 @@ app.post('/admin/post/submodul/sdl', upload.fields([
     let videoUrl = null;
     
     if (req.files && req.files['file'] && req.files['file'][0]) {
-      pdfUrl = `http://localhost:8080/server/video_file/${req.files['file'][0].filename}`;
+      pdfUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['file'][0].filename}`;
     }
     
     if (req.files && req.files['video'] && req.files['video'][0]) {
-      videoUrl = `http://localhost:8080/server/video_file/${req.files['video'][0].filename}`;
+      videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['video'][0].filename}`;
     }
     
     // Buat objek submodul baru
@@ -665,7 +665,7 @@ app.put('/admin/put/submodul/sdl/:submoduleId', upload.fields([
 
     // Handle PDF file upload
     if (req.files['file']) {
-      const pdfUrl = `http://localhost:8080/server/video_file/${req.files['file'][0].filename}`;
+      const pdfUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['file'][0].filename}`;
       updateData.pdf_url = pdfUrl;
     } else if (pdf_url) {
       updateData.pdf_url = pdf_url;
@@ -673,7 +673,7 @@ app.put('/admin/put/submodul/sdl/:submoduleId', upload.fields([
 
     // Handle video file upload
     if (req.files['video']) {
-      const videoUrl = `http://localhost:8080/server/video_file/${req.files['video'][0].filename}`;
+      const videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['video'][0].filename}`;
       updateData.video_url = videoUrl;
     } else if (video_url) {
       updateData.video_url = video_url;
@@ -804,7 +804,7 @@ app.delete('/admin/delete/submodul/sdl/:submoduleId', async (req, res) => {
 app.post('/admin/post/submodul/sdl/upload-video/:submoduleId', upload.single('file'), async (req, res) => {
   try {
     const { submoduleId } = req.params;
-    const videoUrl = `http://localhost:8080/server/video_file/${req.file.filename}`;
+    const videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.file.filename}`;
 
     const result = await updateSubmoduleSDL(submoduleId, {
       judul_submodul: req.body.judul_submodul,
@@ -861,11 +861,11 @@ app.post('/admin/post/submodul/eldas', upload.fields([
     let videoUrl = null;
     
     if (req.files && req.files['file'] && req.files['file'][0]) {
-      pdfUrl = `http://localhost:8080/server/video_file/${req.files['file'][0].filename}`;
+      pdfUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['file'][0].filename}`;
     }
     
     if (req.files && req.files['video'] && req.files['video'][0]) {
-      videoUrl = `http://localhost:8080/server/video_file/${req.files['video'][0].filename}`;
+      videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['video'][0].filename}`;
     } else if (req.body.video_url) {
       videoUrl = req.body.video_url; // ✅ Tambahkan ini
     }
@@ -921,7 +921,7 @@ app.put('/admin/put/submodul/eldas/:submoduleId', upload.fields([
 
     // Handle PDF file upload
     if (req.files['file']) {
-      const pdfUrl = `http://localhost:8080/server/video_file/${req.files['file'][0].filename}`;
+      const pdfUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['file'][0].filename}`;
       updateData.pdf_url = pdfUrl;
     } else if (pdf_url) {
       updateData.pdf_url = pdf_url;
@@ -929,7 +929,7 @@ app.put('/admin/put/submodul/eldas/:submoduleId', upload.fields([
 
     // Handle video file upload
     if (req.files['video']) {
-      const videoUrl = `http://localhost:8080/server/video_file/${req.files['video'][0].filename}`;
+      const videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['video'][0].filename}`;
       updateData.video_url = videoUrl;
     } else if (video_url) {
       updateData.video_url = video_url;
@@ -1060,7 +1060,7 @@ app.delete('/admin/delete/submodul/eldas/:submoduleId', async (req, res) => {
 app.post('/admin/post/submodul/eldas/upload-video/:submoduleId', upload.single('file'), async (req, res) => {
   try {
     const { submoduleId } = req.params;
-    const videoUrl = `http://localhost:8080/server/video_file/${req.file.filename}`;
+    const videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.file.filename}`;
 
     const result = await updateSubmoduleEldas(submoduleId, {
       judul_submodul: req.body.judul_submodul,
@@ -1114,11 +1114,11 @@ app.post('/admin/post/submodul/pjk', upload.fields([
     let videoUrl = null;
     
     if (req.files && req.files['file'] && req.files['file'][0]) {
-      pdfUrl = `http://localhost:8080/server/video_file/${req.files['file'][0].filename}`;
+      pdfUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['file'][0].filename}`;
     }
     
     if (req.files && req.files['video'] && req.files['video'][0]) {
-      videoUrl = `http://localhost:8080/server/video_file/${req.files['video'][0].filename}`;
+      videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['video'][0].filename}`;
     } else if (req.body.video_url) {
       videoUrl = req.body.video_url; // ✅ Tambahkan ini
     }
@@ -1174,7 +1174,7 @@ app.put('/admin/put/submodul/pjk/:submoduleId', upload.fields([
 
     // Handle PDF file upload
     if (req.files['file']) {
-      const pdfUrl = `http://localhost:8080/server/video_file/${req.files['file'][0].filename}`;
+      const pdfUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['file'][0].filename}`;
       updateData.pdf_url = pdfUrl;
     } else if (pdf_url) {
       updateData.pdf_url = pdf_url;
@@ -1182,7 +1182,7 @@ app.put('/admin/put/submodul/pjk/:submoduleId', upload.fields([
 
     // Handle video file upload
     if (req.files['video']) {
-      const videoUrl = `http://localhost:8080/server/video_file/${req.files['video'][0].filename}`;
+      const videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['video'][0].filename}`;
       updateData.video_url = videoUrl;
     } else if (video_url) {
       updateData.video_url = video_url;
@@ -1310,7 +1310,7 @@ app.delete('/admin/delete/submodul/pjk/:submoduleId', async (req, res) => {
 app.post('/admin/post/submodul/pjk/upload-video/:submoduleId', upload.single('file'), async (req, res) => {
   try {
     const { submoduleId } = req.params;
-    const videoUrl = `http://localhost:8080/server/video_file/${req.file.filename}`;
+    const videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.file.filename}`;
 
     const result = await updateSubmodulePJK(submoduleId, {
       judul_submodul: req.body.judul_submodul,
@@ -1360,11 +1360,11 @@ app.post('/admin/post/submodul/sbd', upload.fields([
     let videoUrl = null;
 
     if (req.files['file']) {
-      pdfUrl = `http://localhost:8080/server/video_file/${req.files['file'][0].filename}`;
+      pdfUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['file'][0].filename}`;
     }
 
     if (req.files['video']) {
-      videoUrl = `http://localhost:8080/server/video_file/${req.files['video'][0].filename}`;
+      videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['video'][0].filename}`;
     } else if (req.body.video_url) {
       videoUrl = req.body.video_url;
     }
@@ -1410,13 +1410,13 @@ app.put('/admin/put/submodul/sbd/:submoduleId', upload.fields([
     const updateData = { judul_submodul };
 
     if (req.files['file']) {
-      updateData.pdf_url = `http://localhost:8080/server/video_file/${req.files['file'][0].filename}`;
+      updateData.pdf_url = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['file'][0].filename}`;
     } else if (pdf_url) {
       updateData.pdf_url = pdf_url;
     }
 
     if (req.files['video']) {
-      updateData.video_url = `http://localhost:8080/server/video_file/${req.files['video'][0].filename}`;
+      updateData.video_url = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['video'][0].filename}`;
     } else if (video_url) {
       updateData.video_url = video_url;
     }
@@ -1530,7 +1530,7 @@ app.delete('/admin/delete/quiz/sbd/:quizId', async (req, res) => {
 app.post('/admin/post/submodul/sbd/upload-video/:submoduleId', upload.single('file'), async (req, res) => {
   try {
     const { submoduleId } = req.params;
-    const videoUrl = `http://localhost:8080/server/video_file/${req.file.filename}`;
+    const videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.file.filename}`;
 
     const result = await updateSubmoduleSBD(submoduleId, {
       judul_submodul: req.body.judul_submodul,
@@ -1580,11 +1580,11 @@ app.post('/admin/post/submodul/mulmed', upload.fields([
     let videoUrl = null;
 
     if (req.files['file']) {
-      pdfUrl = `http://localhost:8080/server/video_file/${req.files['file'][0].filename}`;
+      pdfUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['file'][0].filename}`;
     }
 
     if (req.files['video']) {
-      videoUrl = `http://localhost:8080/server/video_file/${req.files['video'][0].filename}`;
+      videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['video'][0].filename}`;
     } else if (req.body.video_url) {
       videoUrl = req.body.video_url;
     }
@@ -1630,13 +1630,13 @@ app.put('/admin/put/submodul/mulmed/:submoduleId', upload.fields([
     const updateData = { judul_submodul };
 
     if (req.files['file']) {
-      updateData.pdf_url = `http://localhost:8080/server/video_file/${req.files['file'][0].filename}`;
+      updateData.pdf_url = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['file'][0].filename}`;
     } else if (pdf_url) {
       updateData.pdf_url = pdf_url;
     }
 
     if (req.files['video']) {
-      updateData.video_url = `http://localhost:8080/server/video_file/${req.files['video'][0].filename}`;
+      updateData.video_url = `https://simp-backend-production.up.railway.app/server/video_file/${req.files['video'][0].filename}`;
     } else if (video_url) {
       updateData.video_url = video_url;
     }
@@ -1758,7 +1758,7 @@ app.post('/admin/post/submodul/mulmed/upload-video/:submoduleId', upload.single(
       });
     }
 
-    const videoUrl = `http://localhost:8080/server/video_file/${req.file.filename}`;
+    const videoUrl = `https://simp-backend-production.up.railway.app/server/video_file/${req.file.filename}`;
 
     const updatedSubmodule = await updateSubmoduleMulmed(parseInt(submoduleId), {
       video_url: videoUrl
@@ -1795,7 +1795,7 @@ app.post('/admin/post/submodul/mulmed/upload-video/:submoduleId', upload.single(
 app.post("/api/submission/upload", upload.single("file"), async (req, res) => {
   try {
     const { idUser, idPraktikum, idPertemuan, jenis } = req.body;
-    const file_path = `http://localhost:8080/server/video_file/${req.file.filename}`;
+    const file_path = `https://simp-backend-production.up.railway.app/server/video_file/${req.file.filename}`;
 
     console.log("Saving submission:", { idUser, idPraktikum, idPertemuan, jenis, file_path });
 
