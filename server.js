@@ -2144,8 +2144,8 @@ app.post('/api/asprak/submission/asistensi', upload.single('file_revisi'), async
       status: req.body.status,
       catatan_asistensi: req.body.catatan_asistensi || null,
       file_revisi_asprak: req.file 
-        ? `http://localhost:${PORT}/server/video_file/${req.file.filename}` 
-        : null
+      ? `https://simp-backend-production.up.railway.app/server/video_file/${req.file.filename}` 
+      : null
     };
 
     // Validasi input wajib
