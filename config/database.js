@@ -13,6 +13,7 @@ pool.getConnection()
 
 // Fungsi untuk mengambil daftar lab
 
+
 // Fungsi untuk mengambil data praktikum berdasarkan lab_id
 export async function getPraktikumDataByLabId(labId) {
   const [rows] = await pool.query("SELECT * FROM praktikum WHERE lab_id = ?", [labId])
@@ -166,7 +167,7 @@ export async function createModule(moduleData) {
 export async function updateModule(moduleId, moduleData) {
   const { judul_modul } = moduleData;
   const [result] = await pool.query(
-    'UPDATE modul SET judul_modul = ? WHERE id_modul = ?',
+    'UPDATE modul_eldas SET judul_modul = ? WHERE id_modul = ?',
     [judul_modul, moduleId]
   );
   return { id_modul: moduleId, ...moduleData, affectedRows: result.affectedRows };
