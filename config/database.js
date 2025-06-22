@@ -6,6 +6,11 @@ dotenv.config()
 
 export const pool = mysql.createPool(process.env.MYSQL_URL);
 
+// Tes koneksi
+pool.getConnection()
+  .then(() => console.log("✅ DB connected successfully!"))
+  .catch((err) => console.error("❌ DB connection error:", err));
+
 // Fungsi untuk mengambil daftar lab
 
 // Fungsi untuk mengambil data praktikum berdasarkan lab_id
